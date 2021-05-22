@@ -1,0 +1,59 @@
+{
+	"name": "ADS-add-columns",
+	"displayName": "ADD COLUMNS",
+	"description": "Use this extension to add colums to existing table using the context menu",
+	"publisher": "softwarehut",
+	"version": "0.0.8",
+	"repository": "https://github.com/sahalMoidu/adsAddColumn",
+	"engines": {
+		"vscode": "^1.39.0",
+		"azdata": "*"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.AddColumn"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.AddColumn",
+				"title": "Add Column"
+			}
+			
+		]
+		,"menus": {
+			"objectExplorer/item/context": [
+			{
+				"command": "extension.AddColumn",
+				"when": "connectionProvider == MSSQL && nodeType == Table",
+				"group": "NONE"
+			}]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js",
+		"proposedapi": "node installTypings.js"
+	},
+	"devDependencies": {
+		"@types/azdata": "*",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.39.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
