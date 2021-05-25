@@ -1,10 +1,10 @@
 {
 	"name": "ADS-add-columns",
-	"displayName": "ADD COLUMNS",
+	"displayName": "Add Columns",
 	"description": "Use this extension to add colums to existing table using the context menu",
 	"publisher": "softwarehut",
 	"icon":"logo.png",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"repository": "https://github.com/sahalMoidu/adsAddColumn",
 	"engines": {
 		"vscode": "^1.39.0",
